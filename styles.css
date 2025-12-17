@@ -31,7 +31,7 @@ body {
   margin: 0 1rem;
 }
 
-.navbar a {
+/* .navbar a {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
@@ -39,6 +39,18 @@ body {
 
 .navbar a:hover {
   text-decoration: underline;
+} */
+
+.navbar a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.navbar a:hover {
+  color: #00bcd4; /* hover color */
+  text-decoration: none;
 }
 
 main {
