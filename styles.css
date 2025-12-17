@@ -41,7 +41,7 @@ body {
   text-decoration: underline;
 } */
 
-.navbar a {
+/* .navbar a {
   color: #ffffff;
   text-decoration: none;
   font-weight: 500;
@@ -51,6 +51,20 @@ body {
 .navbar a:hover {
   color: #00bcd4; /* hover color */
   text-decoration: none;
+} */
+
+.navbar a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.navbar a:hover {
+  color: #111;
+  background-color: #00bcd4;
 }
 
 main {
