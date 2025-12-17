@@ -1,28 +1,48 @@
-const sections: NodeListOf<HTMLElement> =
-  document.querySelectorAll('.section');
+// const sections: NodeListOf<HTMLElement> =
+//   document.querySelectorAll('.section');
 
-const observerOptions: IntersectionObserverInit = {
-  root: null,
-  threshold: 0.15,
-};
+// const observerOptions: IntersectionObserverInit = {
+//   root: null,
+//   threshold: 0.15,
+// };
 
-const revealOnScroll = (
-  entries: IntersectionObserverEntry[],
-  observer: IntersectionObserver
-): void => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const target = entry.target as HTMLElement;
-      target.classList.add('visible');
-      target.classList.remove('hidden');
-      observer.unobserve(target);
-    }
-  });
-};
+// const revealOnScroll = (
+//   entries: IntersectionObserverEntry[],
+//   observer: IntersectionObserver
+// ): void => {
+//   entries.forEach(entry => {
+//     if (entry.isIntersecting) {
+//       const target = entry.target as HTMLElement;
+//       target.classList.add('visible');
+//       target.classList.remove('hidden');
+//       observer.unobserve(target);
+//     }
+//   });
+// };
 
-const observer = new IntersectionObserver(
-  revealOnScroll,
-  observerOptions
-);
+// const observer = new IntersectionObserver(
+//   revealOnScroll,
+//   observerOptions
+// );
 
-sections.forEach(section => observer.observe(section));
+// sections.forEach(section => observer.observe(section));
+
+document.addEventListener('DOMContentLoaded', () => {
+  const sections = document.querySelectorAll<HTMLElement>('.section');
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          entry.target.classList.remove('hidden');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  sections.forEach(section => observer.observe(section));
+});
+
