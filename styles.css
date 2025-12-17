@@ -115,3 +115,11 @@ main {
   opacity: 1;
   transform: translateY(0);
 }
+
+.section[data-animate="left"] .section-content > * {
+  transform: translateX(-24px);
+}
+
+.section[data-animate="right"] .section-content > * {
+  transform: translateX(24px);
+}
